@@ -1,7 +1,8 @@
 name: HelloWorld
 
 on:
-  pull_request
+  pull_request:
+    types: [opened, reopened, edited]
 
 jobs:
   build:
