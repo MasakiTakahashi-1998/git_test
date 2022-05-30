@@ -2,6 +2,11 @@ name: HelloWorld
 
 on:
   workflow_dispatch :
+    inputs:
+      to:
+        description: "比較するブランチ"
+        required: true
+        default: "pre-production"
 
 jobs:
   build:
