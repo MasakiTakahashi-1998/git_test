@@ -1,0 +1,19 @@
+name: Subtractive Color
+on:
+  workflow_dispatch :
+    inputs:
+      texture_path:
+        description: "画像のパス"
+        required: true
+        default: ".png"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install ImageMagick
+        run: sudo apt install imagemagick # Seems to work and already be included with ubuntu-latest...
+#       - name: Convert PDF to PNG
+#         run: convert 26040.png -depth 4  26040-depth4.png  
+      - name : test echo
+        run: echo ${{ github.event.inputs.texture_path }}
