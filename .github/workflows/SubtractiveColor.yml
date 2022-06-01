@@ -5,7 +5,7 @@ on:
       texture_path:
         description: "画像のパス"
         required: true
-        default: ".png"
+        default: ""
 
 jobs:
   build:
@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Install ImageMagick
         run: sudo apt install imagemagick # Seems to work and already be included with ubuntu-latest...
-#       - name: Convert PDF to PNG
-#         run: convert 26040.png -depth 8 26040-depth4.png  
+      - name: Convert PDF to PNG
+        run: convert ${{ github.event.inputs.texture_path }}.png -depth 8 ${{ github.event.inputs.texture_path }}-depth8.png  
       - name : test echo
         run: echo ${{ github.event.inputs.texture_path }}
