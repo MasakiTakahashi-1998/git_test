@@ -13,10 +13,7 @@ jobs:
     steps:
       - name: Install ImageMagick
         run: sudo apt install imagemagick # Seems to work and already be included with ubuntu-latest...
-      - name: pwd
-        run: pwd
-#       - name: Convert PDF to PNG
-#         run: convert shop_atlas_0.png -depth 8 shop_atlas_0-depth8.png
-#         ${{ github.event.inputs.texture_path }}
-#       - name : test echo
-#         run: echo ${{ github.event.inputs.texture_path }}
+      - name: Convert PDF to PNG
+        run: convert /home/runner/work/git_test/git_test/shop_atlas_0.png -depth 8 /home/runner/work/git_test/git_test/shop_atlas_0-depth8.png
+      - name : test echo
+        run: echo ${{ github.event.inputs.texture_path }}
