@@ -15,6 +15,7 @@ jobs:
         run: sudo apt install imagemagick # Seems to work and already be included with ubuntu-latest...
       - name: Convert PDF to PNG
 #         run: convert ${{ github.event.inputs.texture_path }}.png -depth 8 ${{ github.event.inputs.texture_path }}-depth8.png  
-        run: wc -c ${{ github.event.inputs.texture_path }} | awk '{print $1}'
+#         run: wc -c ${{ github.event.inputs.texture_path }} | awk '{print $1}'
+        run: ls
       - name : test echo
         run: echo ${{ github.event.inputs.texture_path }}
